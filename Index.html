@@ -1,173 +1,922 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sundown Studio</title>
-    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>ASHA Healthcare - Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <div id="loader">
-        <h1>ENVIRONMENTS</h1>
-        <h1>EXPERIENCES</h1>
-        <h1>CONTENT</h1>
-    </div>
-    <div id="fixed-image">
-
-    </div>
-    <div id="main">
-
-        <div id="page1">
-            <nav>
-                <img src="https://uploads-ssl.webflow.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15c2_Sundown%20logo.svg"
-                    alt="">
-                <div id="nav-part2">
-                    <h4><a href="#">Work</a></h4>
-                    <h4><a href="#">Studio</a></h4>
-                    <h4><a href="#">Contact</a></h4>
-                </div>
-                <h3>Menu</h3>
-            </nav>
-            <div id="center">
-                <div id="left">
-                    <h3>Sundown is a multi-disciplinary studio focused on creating unique, end-to-end experiences and
-                        environments.</h3>
-                </div>
-                <div id="right">
-                    <h1>SPACES <br>
-                        THAT <br>
-                        INSPIRE</h1>
-                </div>
-
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <div class="app-logo">
+                <i class="fas fa-hand-holding-medical"></i>
+                <h1>ASHA Healthcare</h1>
             </div>
-            <div id="hero-shape">
-                <div id="hero-1"></div>
-                <div id="hero-2"></div>
-                <div id="hero-3"></div>
-            </div>
-            <video autoplay loop muted src="./video.mp4"></video>
-        </div>
-        <div id="page2">
-            <div id="moving-text">
-                <div class="con">
-                    <h1>EXPERIENCES</h1>
-                    <div id="gola"></div>
-                    <h1>CONTENT</h1>
-                    <div id="gola"></div>
-                    <h1>ENVIRONMENTS</h1>
-                    <div id="gola"></div>
+            <div class="login-options">
+                <div class="login-option active" data-method="biometric">
+                    <i class="fas fa-fingerprint"></i>
+                    <span>Biometric Login</span>
                 </div>
-                <div class="con">
-                    <h1>EXPERIENCES</h1>
-                    <div id="gola"></div>
-                    <h1>CONTENT</h1>
-                    <div id="gola"></div>
-                    <h1>ENVIRONMENTS</h1>
-                    <div id="gola"></div>
-                </div>
-                <div class="con">
-                    <h1>EXPERIENCES</h1>
-                    <div id="gola"></div>
-                    <h1>CONTENT</h1>
-                    <div id="gola"></div>
-                    <h1>ENVIRONMENTS</h1>
-                    <div id="gola"></div>
+                <div class="login-option" data-method="mobile">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Mobile + OTP</span>
                 </div>
             </div>
-            <div id="page2-bottom">
-                <h1>We are a group of design- driven, goal-focused creators,  producers, and designers who
-                    believe that the details  make all the difference.</h1>
-                <div id="bottom-part2">
-                    <img src="https://uploads-ssl.webflow.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15d1_Holding_thumb-p-500.jpg"
-                        alt="">
-                    <p>We love to create, we love to solve, we love to collaborate, and we love to turn amazing ideas
-                        into reality. We're here to partner with you through every step of the process and know that
-                        relationships are the most important things we build.</p>
+            
+            <div class="login-form" id="biometric-form">
+                <div class="input-group">
+                    <i class="fas fa-fingerprint"></i>
+                    <input type="text" placeholder="Place your finger on sensor" readonly>
                 </div>
+                <button class="btn-primary" id="biometric-scan">Scan Fingerprint</button>
             </div>
-            <div id="gooey">
-
-            </div>
-        </div>
-        <div id="page3">
-            <div id="elem-container">
-                <div id="elem1" class="elem"
-                    data-image="https://images.unsplash.com/photo-1701001308648-7b731a52b8d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>Makers Studio HOI</h2>
+            
+            <div class="login-form hidden" id="mobile-form">
+                <div class="input-group">
+                    <i class="fas fa-mobile-alt"></i>
+                    <input type="tel" placeholder="Enter Mobile Number" id="mobile-number">
                 </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700975928909-da4a46227a47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8">
-                    <div class="overlay"></div>
-                    <h2>50th Anniversary</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1701077137611-9be394bf62f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>NYFW Popup</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1701014159309-4a8b84faadfe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>Air Force 1 2021</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700924546093-f914fd5b8814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOHx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>SOHO NYC</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700601437860-e66da79cf6d2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1OXx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>SOHO 2023</h2>
-                </div>
-                <div class="elem"
-                    data-image="https://images.unsplash.com/photo-1700769025506-6c3dcb9ec9b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2OXx8fGVufDB8fHx8fA%3D%3D">
-                    <div class="overlay"></div>
-                    <h2>Play New Kidvision</h2>
-                </div>
-            </div>
-        </div>
-        <div id="page4">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide">Slide 6</div>
-                    <div class="swiper-slide">Slide 7</div>
-                </div>
-
-            </div>
-        </div>
-        <div id="page5">
-
-        </div>
-        <div id="full-scr">
-            <div id="full-div1">
+                <button class="btn-primary" id="send-otp">Send OTP</button>
                 
+                <div class="otp-group hidden" id="otp-input">
+                    <div class="input-group">
+                        <i class="fas fa-shield-alt"></i>
+                        <input type="text" placeholder="Enter OTP" id="otp-code">
+                    </div>
+                    <button class="btn-primary" id="verify-otp">Verify OTP</button>
+                </div>
+            </div>
+            
+            <div class="login-tips">
+                <h3>Tips for ASHA Workers:</h3>
+                <ul>
+                    <li>Ensure your biometric data is updated in the system</li>
+                    <li>Keep your registered mobile number active</li>
+                    <li>Work offline when network is unavailable - data will sync automatically later</li>
+                </ul>
             </div>
         </div>
     </div>
-    <div id="footer">
-        <div id="footer-div">
 
-        </div>
-        <h1>Sundown</h1>
-        <div id="footer-bottom">
-
+    <!-- Language Selection Screen -->
+    <div id="language-screen" class="screen">
+        <div class="language-container">
+            <h2>Choose Your Language</h2>
+            <div class="language-options">
+                <div class="language-option" data-lang="en">
+                    <span>English</span>
+                </div>
+                <div class="language-option" data-lang="hi">
+                    <span>हिन्दी (Hindi)</span>
+                </div>
+                <div class="language-option" data-lang="bn">
+                    <span>বাংলা (Bengali)</span>
+                </div>
+                <div class="language-option" data-lang="te">
+                    <span>తెలుగు (Telugu)</span>
+                </div>
+                <div class="language-option" data-lang="ta">
+                    <span>தமிழ் (Tamil)</span>
+                </div>
+                <div class="language-option" data-lang="mr">
+                    <span>मराठी (Marathi)</span>
+                </div>
+            </div>
+            <button class="btn-primary" id="confirm-language">Continue</button>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Main Dashboard Screen -->
+    <div id="dashboard-screen" class="screen">
+        <header class="dashboard-header">
+            <div class="header-left">
+                <i class="fas fa-bars" id="menu-toggle"></i>
+                <h1>ASHA Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </div>
+                <div class="language-selector">
+                    <i class="fas fa-globe"></i>
+                    <span>English</span>
+                </div>
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <aside class="sidebar" id="sidebar">
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" data-page="home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="patient-register">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Patient Register</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="daily-checklist">
+                        <i class="fas fa-tasks"></i>
+                        <span>Daily Checklist</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="support">
+                        <i class="fas fa-headset"></i>
+                        <span>Support</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="resources">
+                        <i class="fas fa-book"></i>
+                        <span>Resources</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="sync">
+                        <i class="fas fa-sync"></i>
+                        <span>Sync Data</span>
+                        <span class="sync-status offline">Offline</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <main class="dashboard-content">
+                <!-- Home Page -->
+                <div class="content-page active" id="home-page">
+                    <div class="page-header">
+                        <h2>Welcome, ASHA Worker</h2>
+                        <p>Here's your overview for today</p>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>45</h3>
+                                <p>Total Patients</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>12</h3>
+                                <p>Pregnant Women</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-baby"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>18</h3>
+                                <p>Children</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>7/15</h3>
+                                <p>Today's Visits</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Register Patient</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>View Today's Route</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-sync"></i>
+                                <span>Sync Data</span>
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-notes-medical"></i>
+                                <span>Health Reports</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activities">
+                        <h3>Recent Activities</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>Registered new patient - Priya Sharma</p>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-syringe"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>Administered vaccine to Rohan Kumar</p>
+                                    <span>4 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p>Flagged high-risk pregnancy - Anjali Patel</p>
+                                    <span>Yesterday</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Patient Register Page -->
+                <div class="content-page" id="patient-register-page">
+                    <div class="page-header">
+                        <h2>Patient Registration</h2>
+                        <p>Register new patients using multiple input methods</p>
+                    </div>
+                    
+                    <div class="registration-methods">
+                        <div class="method-tabs">
+                            <button class="method-tab active" data-method="voice">
+                                <i class="fas fa-microphone"></i>
+                                Voice Input
+                            </button>
+                            <button class="method-tab" data-method="text">
+                                <i class="fas fa-keyboard"></i>
+                                Text Input
+                            </button>
+                            <button class="method-tab" data-method="image">
+                                <i class="fas fa-camera"></i>
+                                Image/Reports
+                            </button>
+                        </div>
+                        
+                        <div class="method-content">
+                            <!-- Voice Input -->
+                            <div class="method-panel active" id="voice-panel">
+                                <div class="voice-input-container">
+                                    <div class="voice-instructions">
+                                        <h3>Voice Registration Instructions</h3>
+                                        <ul>
+                                            <li>Speak clearly and at a moderate pace</li>
+                                            <li>Say "comma" to separate different fields</li>
+                                            <li>Say "next" to move to the next field</li>
+                                            <li>Say "save" when finished</li>
+                                        </ul>
+                                    </div>
+                                    <div class="voice-controls">
+                                        <button class="voice-btn" id="start-recording">
+                                            <i class="fas fa-microphone"></i>
+                                            Start Recording
+                                        </button>
+                                        <div class="voice-visualizer">
+                                            <div class="visualizer-bar"></div>
+                                            <div class="visualizer-bar"></div>
+                                            <div class="visualizer-bar"></div>
+                                            <div class="visualizer-bar"></div>
+                                            <div class="visualizer-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="voice-output">
+                                        <p id="voice-text">Press the button and start speaking...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Text Input -->
+                            <div class="method-panel" id="text-panel">
+                                <form class="patient-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="patient-name">Full Name</label>
+                                            <input type="text" id="patient-name" placeholder="Enter patient's full name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="patient-age">Age</label>
+                                            <input type="number" id="patient-age" placeholder="Age">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="patient-gender">Gender</label>
+                                            <select id="patient-gender">
+                                                <option value="">Select Gender</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="patient-height">Height (cm)</label>
+                                            <input type="number" id="patient-height" placeholder="Height in cm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="patient-weight">Weight (kg)</label>
+                                            <input type="number" id="patient-weight" placeholder="Weight in kg">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="patient-address">Address</label>
+                                        <textarea id="patient-address" placeholder="Full address"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="patient-family">Family Details</label>
+                                            <textarea id="patient-family" placeholder="Information about family members"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="patient-chronic">Chronic Illness</label>
+                                            <textarea id="patient-chronic" placeholder="Any chronic illnesses"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="patient-allergies">Allergies</label>
+                                            <textarea id="patient-allergies" placeholder="Known allergies"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="patient-pregnancy">Pregnancy Month (if applicable)</label>
+                                            <input type="number" id="patient-pregnancy" placeholder="Month of pregnancy">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="patient-last-vaccine">Last Vaccine Details</label>
+                                        <input type="text" id="patient-last-vaccine" placeholder="Details of last vaccine administered">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="patient-description">Additional Notes</label>
+                                        <textarea id="patient-description" placeholder="Any additional information"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="button" class="btn-secondary">Save Locally</button>
+                                        <button type="submit" class="btn-primary">Save & Sync</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Image Input -->
+                            <div class="method-panel" id="image-panel">
+                                <div class="image-upload-container">
+                                    <h3>Upload Patient Reports & Documents</h3>
+                                    <div class="upload-area" id="upload-area">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag & drop reports here or click to browse</p>
+                                        <input type="file" id="file-input" multiple accept="image/*,.pdf">
+                                    </div>
+                                    <div class="uploaded-files" id="uploaded-files">
+                                        <!-- Uploaded files will appear here -->
+                                    </div>
+                                    <div class="upload-actions">
+                                        <button class="btn-primary" id="process-images">Process Documents</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Daily Checklist Page -->
+                <div class="content-page" id="daily-checklist-page">
+                    <div class="page-header">
+                        <h2>Daily Checklist</h2>
+                        <p>Your schedule and tasks for today</p>
+                    </div>
+                    
+                    <div class="checklist-container">
+                        <div class="checklist-header">
+                            <div class="date-selector">
+                                <button class="date-nav">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="current-date">Today, 15 Nov 2023</span>
+                                <button class="date-nav">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="view-options">
+                                <button class="view-option active" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                    List
+                                </button>
+                                <button class="view-option" data-view="map">
+                                    <i class="fas fa-map"></i>
+                                    Map
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="checklist-content">
+                            <div class="checklist-view active" id="list-view">
+                                <div class="task-filters">
+                                    <button class="filter-btn active" data-filter="all">All</button>
+                                    <button class="filter-btn" data-filter="pregnant">Pregnant Women</button>
+                                    <button class="filter-btn" data-filter="child">Children</button>
+                                    <button class="filter-btn" data-filter="chronic">Chronic Illness</button>
+                                </div>
+                                
+                                <div class="task-list">
+                                    <div class="task-item" data-category="pregnant">
+                                        <div class="task-checkbox">
+                                            <input type="checkbox" id="task1">
+                                            <label for="task1"></label>
+                                        </div>
+                                        <div class="task-details">
+                                            <h4>Anjali Patel - Pregnancy Checkup</h4>
+                                            <p>7 months pregnant, routine checkup</p>
+                                            <div class="task-meta">
+                                                <span class="task-time"><i class="fas fa-clock"></i> 9:00 AM</span>
+                                                <span class="task-location"><i class="fas fa-map-marker-alt"></i> Sector 12, House No. 45</span>
+                                            </div>
+                                        </div>
+                                        <div class="task-actions">
+                                            <button class="task-btn">
+                                                <i class="fas fa-directions"></i>
+                                            </button>
+                                            <button class="task-btn">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-item" data-category="child">
+                                        <div class="task-checkbox">
+                                            <input type="checkbox" id="task2">
+                                            <label for="task2"></label>
+                                        </div>
+                                        <div class="task-details">
+                                            <h4>Rohan Kumar - Vaccination</h4>
+                                            <p>2 years old, measles vaccine due</p>
+                                            <div class="task-meta">
+                                                <span class="task-time"><i class="fas fa-clock"></i> 10:30 AM</span>
+                                                <span class="task-location"><i class="fas fa-map-marker-alt"></i> Sector 15, House No. 23</span>
+                                            </div>
+                                        </div>
+                                        <div class="task-actions">
+                                            <button class="task-btn">
+                                                <i class="fas fa-directions"></i>
+                                            </button>
+                                            <button class="task-btn">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-item" data-category="chronic">
+                                        <div class="task-checkbox">
+                                            <input type="checkbox" id="task3">
+                                            <label for="task3"></label>
+                                        </div>
+                                        <div class="task-details">
+                                            <h4>Mr. Sharma - Diabetes Check</h4>
+                                            <p>65 years, diabetes monitoring</p>
+                                            <div class="task-meta">
+                                                <span class="task-time"><i class="fas fa-clock"></i> 12:00 PM</span>
+                                                <span class="task-location"><i class="fas fa-map-marker-alt"></i> Sector 8, House No. 67</span>
+                                            </div>
+                                        </div>
+                                        <div class="task-actions">
+                                            <button class="task-btn">
+                                                <i class="fas fa-directions"></i>
+                                            </button>
+                                            <button class="task-btn">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="task-item completed" data-category="pregnant">
+                                        <div class="task-checkbox">
+                                            <input type="checkbox" id="task4" checked>
+                                            <label for="task4"></label>
+                                        </div>
+                                        <div class="task-details">
+                                            <h4>Priya Singh - Postnatal Check</h4>
+                                            <p>2 weeks postnatal, mother and baby check</p>
+                                            <div class="task-meta">
+                                                <span class="task-time"><i class="fas fa-clock"></i> 8:00 AM</span>
+                                                <span class="task-location"><i class="fas fa-map-marker-alt"></i> Sector 5, House No. 12</span>
+                                            </div>
+                                        </div>
+                                        <div class="task-actions">
+                                            <button class="task-btn">
+                                                <i class="fas fa-directions"></i>
+                                            </button>
+                                            <button class="task-btn">
+                                                <i class="fas fa-phone"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-view" id="map-view">
+                                <div class="map-container">
+                                    <div class="map-placeholder">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <p>Interactive map showing today's visits</p>
+                                        <p>Route optimization and navigation available</p>
+                                    </div>
+                                    <div class="map-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color pregnant"></span>
+                                            <span>Pregnant Women</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color child"></span>
+                                            <span>Children</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color chronic"></span>
+                                            <span>Chronic Illness</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Support Page -->
+                <div class="content-page" id="support-page">
+                    <div class="page-header">
+                        <h2>Support & Contact</h2>
+                        <p>Get help and contact PHC directly</p>
+                    </div>
+                    
+                    <div class="support-container">
+                        <div class="support-options">
+                            <div class="support-card">
+                                <div class="support-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3>Direct Support</h3>
+                                <p>Contact PHC support team directly for urgent issues</p>
+                                <button class="btn-primary">Call Support</button>
+                            </div>
+                            
+                            <div class="support-card">
+                                <div class="support-icon">
+                                    <i class="fas fa-comment-medical"></i>
+                                </div>
+                                <h3>Medical Consultation</h3>
+                                <p>Connect with doctors for medical advice</p>
+                                <button class="btn-primary">Request Consultation</button>
+                            </div>
+                            
+                            <div class="support-card">
+                                <div class="support-icon">
+                                    <i class="fas fa-question-circle"></i>
+                                </div>
+                                <h3>FAQs & Guides</h3>
+                                <p>Find answers to common questions</p>
+                                <button class="btn-primary">View FAQs</button>
+                            </div>
+                            
+                            <div class="support-card">
+                                <div class="support-icon">
+                                    <i class="fas fa-bug"></i>
+                                </div>
+                                <h3>Report Issue</h3>
+                                <p>Report technical problems with the app</p>
+                                <button class="btn-primary">Report Problem</button>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-contact">
+                            <h3>Emergency Contacts</h3>
+                            <div class="contact-list">
+                                <div class="contact-item">
+                                    <div class="contact-info">
+                                        <h4>PHC Main Center</h4>
+                                        <p>Dr. Rajesh Kumar</p>
+                                    </div>
+                                    <div class="contact-actions">
+                                        <button class="contact-btn">
+                                            <i class="fas fa-phone"></i>
+                                        </button>
+                                        <button class="contact-btn">
+                                            <i class="fas fa-comment"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-info">
+                                        <h4>Emergency Ambulance</h4>
+                                        <p>24/7 Service</p>
+                                    </div>
+                                    <div class="contact-actions">
+                                        <button class="contact-btn emergency">
+                                            <i class="fas fa-ambulance"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-info">
+                                        <h4>Women & Child Help</h4>
+                                        <p>Specialized support</p>
+                                    </div>
+                                    <div class="contact-actions">
+                                        <button class="contact-btn">
+                                            <i class="fas fa-phone"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resources Page -->
+                <div class="content-page" id="resources-page">
+                    <div class="page-header">
+                        <h2>Training & Resources</h2>
+                        <p>Educational materials and reference guides</p>
+                    </div>
+                    
+                    <div class="resources-container">
+                        <div class="resources-categories">
+                            <div class="category-tabs">
+                                <button class="category-tab active" data-category="guides">
+                                    <i class="fas fa-book"></i>
+                                    Guides
+                                </button>
+                                <button class="category-tab" data-category="videos">
+                                    <i class="fas fa-video"></i>
+                                    Videos
+                                </button>
+                                <button class="category-tab" data-category="protocols">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    Protocols
+                                </button>
+                                <button class="category-tab" data-category="updates">
+                                    <i class="fas fa-bullhorn"></i>
+                                    Updates
+                                </button>
+                            </div>
+                            
+                            <div class="resources-search">
+                                <input type="text" placeholder="Search resources...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="resources-content">
+                            <div class="resources-category active" id="guides-category">
+                                <h3>Training Guides</h3>
+                                <div class="resources-list">
+                                    <div class="resource-item">
+                                        <div class="resource-icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                        <div class="resource-details">
+                                            <h4>Maternal Health Guidelines</h4>
+                                            <p>Complete guide for prenatal and postnatal care</p>
+                                            <div class="resource-meta">
+                                                <span><i class="fas fa-clock"></i> Updated 2 weeks ago</span>
+                                                <span><i class="fas fa-download"></i> 245 downloads</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-actions">
+                                            <button class="resource-btn">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="resource-btn">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                        <div class="resource-details">
+                                            <h4>Child Immunization Schedule</h4>
+                                            <p>Vaccination timeline and procedures</p>
+                                            <div class="resource-meta">
+                                                <span><i class="fas fa-clock"></i> Updated 1 month ago</span>
+                                                <span><i class="fas fa-download"></i> 189 downloads</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-actions">
+                                            <button class="resource-btn">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="resource-btn">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                        <div class="resource-details">
+                                            <h4>Chronic Disease Management</h4>
+                                            <p>Monitoring and care for diabetes, hypertension</p>
+                                            <div class="resource-meta">
+                                                <span><i class="fas fa-clock"></i> Updated 3 weeks ago</span>
+                                                <span><i class="fas fa-download"></i> 134 downloads</span>
+                                            </div>
+                                        </div>
+                                        <div class="resource-actions">
+                                            <button class="resource-btn">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="resource-btn">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="resources-category" id="videos-category">
+                                <h3>Training Videos</h3>
+                                <div class="video-list">
+                                    <div class="video-item">
+                                        <div class="video-thumbnail">
+                                            <i class="fas fa-play-circle"></i>
+                                        </div>
+                                        <div class="video-details">
+                                            <h4>Proper Vaccination Techniques</h4>
+                                            <p>Step-by-step guide to safe vaccine administration</p>
+                                            <div class="video-meta">
+                                                <span><i class="fas fa-clock"></i> 15 minutes</span>
+                                                <span><i class="fas fa-eye"></i> 542 views</span>
+                                            </div>
+                                        </div>
+                                        <div class="video-actions">
+                                            <button class="video-btn">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <button class="video-btn">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="video-item">
+                                        <div class="video-thumbnail">
+                                            <i class="fas fa-play-circle"></i>
+                                        </div>
+                                        <div class="video-details">
+                                            <h4>Antenatal Checkup Procedures</h4>
+                                            <p>Comprehensive prenatal examination guide</p>
+                                            <div class="video-meta">
+                                                <span><i class="fas fa-clock"></i> 22 minutes</span>
+                                                <span><i class="fas fa-eye"></i> 387 views</span>
+                                            </div>
+                                        </div>
+                                        <div class="video-actions">
+                                            <button class="video-btn">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <button class="video-btn">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sync Page -->
+                <div class="content-page" id="sync-page">
+                    <div class="page-header">
+                        <h2>Data Sync</h2>
+                        <p>Manage offline data and synchronization</p>
+                    </div>
+                    
+                    <div class="sync-container">
+                        <div class="sync-status-card">
+                            <div class="sync-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="sync-details">
+                                <h3>Connection Status</h3>
+                                <p class="status-offline">Currently Offline</p>
+                                <p>Data will sync automatically when connection is restored</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sync-data-card">
+                            <h3>Pending Sync</h3>
+                            <div class="sync-stats">
+                                <div class="sync-stat">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Patient Records</span>
+                                </div>
+                                <div class="sync-stat">
+                                    <span class="stat-value">7</span>
+                                    <span class="stat-label">Health Reports</span>
+                                </div>
+                                <div class="sync-stat">
+                                    <span class="stat-value">5</span>
+                                    <span class="stat-label">Visit Records</span>
+                                </div>
+                            </div>
+                            
+                            <div class="sync-actions">
+                                <button class="btn-primary" id="manual-sync">
+                                    <i class="fas fa-sync"></i>
+                                    Try Manual Sync
+                                </button>
+                                <button class="btn-secondary">
+                                    <i class="fas fa-history"></i>
+                                    View Sync History
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="storage-info">
+                            <h3>Local Storage</h3>
+                            <div class="storage-bar">
+                                <div class="storage-progress" style="width: 65%"></div>
+                            </div>
+                            <p>4.2 GB of 6.5 GB used</p>
+                            <button class="btn-secondary">
+                                <i class="fas fa-trash"></i>
+                                Clear Cache
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notifications-panel">
+        <div class="notifications-header">
+            <h3>Notifications</h3>
+            <button class="close-notifications" id="close-notifications">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="notifications-list">
+            <div class="notification-item unread">
+                <div class="notification-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>High Priority Visit</h4>
+                    <p>Anjali Patel (7 months pregnant) reported discomfort</p>
+                    <span>10 minutes ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-syringe"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Vaccination Reminder</h4>
+                    <p>Rohan Kumar's measles vaccine is due today</p>
+                    <span>2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item">
+                <div class="notification-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="notification-content">
+                    <h4>Data Synced</h4>
+                    <p>12 records were successfully synced to the server</p>
+                    <span>Yesterday</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
-
 </html>
